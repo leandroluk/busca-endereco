@@ -1,0 +1,62 @@
+swagger: '2.0'
+info:
+  title: 'Busca endereço'
+  description: 'API para encontrar o CEP de um determinado endereço utilizando o sistema dos Correios'
+  version: '1.0.0'
+paths:
+  /:
+    get:
+      summary: Pesquisar endereço ou cep
+      operationId: get_search
+      produces:
+      - application/json
+      parameters:
+      - name: search
+        in: query
+        required: true
+        type: string
+      - name: exact
+        in: query
+        required: false
+        type: string
+        enum: [S, N]
+        default: S
+      - name: similar
+        in: query
+        required: false
+        type: string
+        enum: [S, N]
+        default: N
+      - name: cepType
+        in: query
+        required: false
+        type: string
+        enum: [LOG, PRO, CPC, GRU, ALL]
+        default: ALL
+      responses:
+        200:
+          description: Busca com sucesso
+          schema:
+            $ref: '#/definitions/Cep'
+        400:
+          description: Entrada inválida
+          schema:
+            type: object
+            additionalProperties:
+              type: string
+              example:
+                '$field is required'
+definitions:
+  Cep:
+    type: object
+    properties:
+      place:
+        type: string
+      neighborhood:
+        type: string
+      city:
+        type: string
+      state:
+        type: string
+      number:
+        type: string

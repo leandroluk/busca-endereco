@@ -1,0 +1,40 @@
+{
+    // editor
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.detectIndentation": false,
+    "editor.tabSize": 2,
+    "editor.rulers": [
+      40,
+      80,
+      120,
+      160,
+      200,
+      240
+    ],
+    "editor.codeActionsOnSave": {
+      "source.fixAll": true,
+      "source.organizeImports": true
+    },
+    // explorer
+    "explorer.autoReveal": false,
+    // typescript
+    "typescript.format.enable": false,
+    "typescript.suggestionActions.enabled": false,
+    "typescript.suggest.enabled": false,
+    // yaml
+    "[yaml]": {
+      "editor.insertSpaces": true,
+      "editor.tabSize": 2,
+      "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+      },
+    },
+    // docker
+    "[dockerfile]": {
+      "editor.tabSize": 4,
+    }
+  }
